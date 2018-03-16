@@ -11,6 +11,7 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
+\usepackage{hyperref}
 
 \title{Template for LSST Call For Survey Strategy Optimization White Papers}
 \author{}
@@ -24,11 +25,30 @@
 Please provide a short summary of your proposed observations and scientific goals here.
 \end{abstract}
 
+\section{White Paper Information}
+Please provide contact information (name and email address) of the appropriate author(s) for this white paper.
+Please indicate which of the following categories this white paper addresses:
+\begin{itemize} 
+\item a specific observing strategy to enable specific time domain science, 
+	that is relatively agnostic to pointing (e.g., a science case enabled 
+	by relatively deep precise time-resolved multi-color photometry). 
+\item a specific pointing(s) that is (relatively) agnostic of the detailed observing 
+	strategy (e.g., a science case enabled by very deep precise multi-color 
+	photometry) 
+\item an integrated program with science that hinges on the pointing/detailed 
+	observing strategy combination (e.g., search for variable stars in the 
+	LMC/SMC). 
+\item other category (please self-describe). 
+\end{itemize}  
+
+\clearpage
+
 \section{Scientific Motivation}
 
 \begin{footnotesize}
 {\it Describe the scientific justification for this proposal in the context
-of your field, as well as the importance to the general program of astronomy. [page limit]}
+of your field, as well as the importance to the general program of astronomy. 
+(Limit: 2 pages + 1 page for figures/references.)}
 \end{footnotesize}
 
 \vspace{.6in}
@@ -37,7 +57,8 @@ of your field, as well as the importance to the general program of astronomy. [p
 \begin{footnotesize}
 {\it Describe your proposed observations. Please comment on each observing constraint
 below, including the technical motivation behind any constraints. Where relevant, indicate
-if the constraint applies to all requested observations or a specific subset.}
+if the constraint applies to all requested observations or a specific subset. Please note which 
+constraints are not relevant or important for your science goals.}
 \end{footnotesize}
 
 \subsection{High-level description}
@@ -47,16 +68,16 @@ if the constraint applies to all requested observations or a specific subset.}
 
 \vspace{.3in}
 
-\subsection{Footprint -- pointings and/or constraints}
+\subsection{Footprint -- pointings, regions and/or constraints}
 \begin{footnotesize}{\it Describe the specific pointings or general region (RA/Dec, Galactic longitude/latitude or 
-Ecliptic longitude/latitude) for the observations. Please describe any additional constraints, especially if there
+Ecliptic longitude/latitude) for the observations. Please describe any additional requirements, especially if there
 are no specific constraints on the pointings (e.g. stellar density, galactic dust extinction).}
 \end{footnotesize}
 
 \subsection{Image quality}
 \begin{footnotesize}{\it Constraints on the image quality (seeing).}\end{footnotesize}
 
-\subsection{Sky brightness and/or individual image depth}
+\subsection{Individual image depth and/or sky brightness}
 \begin{footnotesize}{\it Constraints on the sky brightness in each image and/or individual image depth for point sources.
 Please differentiate between motivation for a desired sky brightness or individual image depth (as 
 calculated for point sources). Please provide sky brightness or image depth constraints per filter.}
@@ -64,20 +85,21 @@ calculated for point sources). Please provide sky brightness or image depth cons
 
 \subsection{Co-added image depth and/or total number of visits}
 \begin{footnotesize}{\it  Constraints on the total co-added depth and/or total number of visits.
-Please differentiate between motivation for a desired co-added depth and/or the total number of visits.
-Please provide desired co-added depth or number of visits per filter, if relevant.}
+Please differentiate between motivations for a given co-added depth and total number of visits. 
+Please provide desired co-added depth and/or total number of visits per filter, if relevant.}
 \end{footnotesize}
 
-\subsection{Grouping of visits}
-\begin{footnotesize}{\it Constraints on the number of exposures in a visit, and the number of visits in a night. 
-If these groupings should be obtained in particular sets of filters, please describe.}\end{footnotesize}
+\subsection{Number of visits within a night}
+\begin{footnotesize}{\it Constraints the number of exposures (or visits) in a night, especially if considering sequences of visits.  }
+\end{footnotesize}
 
-\subsection{Timing of visits}
+\subsection{Distribution of visits over time}
 \begin{footnotesize}{\it Constraints on the timing of visits --- within a night, between nights, between seasons or
 between years (which could be relevant for rolling cadence choices in the WideFastDeep. 
 Please describe optimum visit timing as well as acceptable limits on visit timing, and options in
 case of missed visits (due to weather, etc.). If this timing should include particular sequences
-of filters, please describe.}\end{footnotesize}
+of filters, please describe.}
+\end{footnotesize}
 
 \subsection{Filter choices}
 \begin{footnotesize}
@@ -86,7 +108,8 @@ of filters, please describe.}\end{footnotesize}
 
 \subsection{Exposure constraints}
 \begin{footnotesize}
-{\it Describe any constraints on the minimum or maximum exposure time required (or alternatively, saturation limits).}
+{\it Describe any constraints on the minimum or maximum exposure time required (or alternatively, saturation limits).
+Please comment on any constraints on the number of exposures in a visit.}
 \end{footnotesize}
 
 \subsection{Other constraints}
@@ -96,30 +119,32 @@ of filters, please describe.}\end{footnotesize}
 
 \subsection{Estimated time requirement}
 \begin{footnotesize}
-{\it Total time requested for these observations, assuming overheads as described at ??.}
+{\it Approximate total time requested for these observations, using the guidelines available at \url{https://github.com/lsst-pst/survey_strategy_wp}.}
 \end{footnotesize}
 
+\vspace{.3in}
 
-\begin{table}[htb]
+\begin{table}[ht]
     \centering
     \begin{tabular}{l|l|l|l}
         \toprule
-        Properties & Rank & Constraint Summary \\
+        Properties & Importance \hspace{.3in} \\
         \midrule
-        Image quality &   &    \\
-        Sky brightness &  &  \\
-        Individual image depth &  &   \\
-        Co-added image depth &  &   \\
-        Number of exposures in a visit &  &   \\
-        Number of visits (in a night) &  &   \\ 
-        Total number of visits &  &   \\
-        Time between visits (in a night) &  &  \\
-        Time between visits (between nights) &  &   \\
-        Long-term gaps between visits & & \\
+        Image quality &     \\
+        Sky brightness &  \\
+        Individual image depth &   \\
+        Co-added image depth &   \\
+        Number of exposures in a visit   &   \\
+        Number of visits (in a night)  &   \\ 
+        Total number of visits &   \\
+        Time between visits (in a night) &  \\
+        Time between visits (between nights)  &   \\
+        Long-term gaps between visits & \\
+        Other (please add other constraints as needed) & \\
         \bottomrule
     \end{tabular}
-    \caption{Summary of observation properties. Rank (specify how we want ranking to work)}
-    \label{tab:obs_constraints}
+    \caption{{\bf Constraint Rankings:} Summary of the relative importance of various survey strategy constraints. Please rank the importance of each of these considerations, from 1=very important, 2=somewhat important, 3=not important. If a given constraint depends on other parameters in the table, but these other parameters are not important in themselves, please only mark the final constraint as important. For example, individual image depth depends on image quality, skybrightness, and number of exposures in a visit; if your science depends on the individual image depth but not directly on the other parameters, individual image depth would be `1' and the other parameters could be marked as `3', giving us the most flexibility when determining the composition of a visit, for example.}
+        \label{tab:obs_constraints}
 \end{table}
 
 \subsection{Technical trades}
@@ -142,7 +167,7 @@ within a window of time with a specified set of filters) with a clear link to th
 More complex metrics which more directly evaluate science output (e.g. number of eclipsing binaries successfully
 identified as a result of a given survey) are also encouraged, preferably as a secondary metric.
 If possible, provide threshold values for these metrics at which point your proposed science would be unsuccessful 
-and where it reaches an ideal goal, or explain why this is not possible to quantify.}
+and where it reaches an ideal goal, or explain why this is not possible to quantify. (Limit: 2 pages).}
 \end{footnotesize}
 
 \vspace{.6in}
