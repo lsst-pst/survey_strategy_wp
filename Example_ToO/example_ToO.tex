@@ -33,8 +33,8 @@ Please contact Lynne Jones, University of Washington, lynnej@uw.edu, with any qu
 
 This white paper addresses:
 \begin{itemize} 
-\item an integrated program with science that hinges on the combination of pointing/detailed 
-	observing strategy combination. 
+\item an integrated program with science that hinges on the combination of pointing and detailed 
+	observing strategy.
 \end{itemize}  
 
 \clearpage
@@ -59,7 +59,7 @@ Even if we only find a single counterpart, we can learn these amazing things.
 Great, I have explained why this is important.  Perhaps I put in a couple of figures showing why it's so awesome.
 
 Of course, we should also mention why LSST is important for this science. LSST could be used 
-to do many things, but ideally the science/survey strategy being discussed is a well matched with LSST's particular
+to do many things, but ideally the science/survey strategy being discussed is well matched with LSST's particular
 capabilities. 
 
 So for example's sake, let's say it's because the alert does provide localization of about 50 deg$^2$, or a circle with 
@@ -73,10 +73,13 @@ of LSST is not necessary.
 
 
 \begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{ToO_tiling}
-\caption{Example of tiling a ToO target with several LSST fields. You could definitely improve this by using the actual LSST footprint,
-or a better approximation of the footprint. But this does give the general idea. \label{fig:tiling}}
+\includegraphics[width=1.1\textwidth]{ToO_tiling}
+\caption{Example of tiling a ToO target with several LSST fields.  This is adequate and provides the general idea, but you could improve this 
+by using the actual LSST footprint. There are tools available to interpret the LSST camera footprint in 
+\href{https://github.com/lsst/sims_coordUtils}{sims\_coordUtils}, 
+including an example of using this code in a Jupyter 
+\href{https://github.com/lsst/sims_coordUtils/blob/master/examples/CameraUtilsExample.ipynb}{notebook}.
+ \label{fig:tiling}}
 \end{figure}
 
 \clearpage
@@ -116,6 +119,9 @@ are no specific constraints on the pointings (e.g. stellar density, galactic dus
 The pointings will be determined by the location of the events. For purposes of simulating these events,
 pointings spread randomly over the sky are sufficient. 
 
+To avoid confusion with galactic sources, event with galactic latitude $|b| < 15^\circ$ and galactic 
+longitude $|l| < 50^\circ$ should not be observed.
+
 \subsection{Image quality}
 \begin{footnotesize}{\it Constraints on the image quality (seeing).}\end{footnotesize}
 
@@ -127,7 +133,8 @@ Please differentiate between motivation for a desired sky brightness or individu
 calculated for point sources). Please provide sky brightness or image depth constraints per filter.}
 \end{footnotesize}
 
-No constraints on individual image depth. 
+No constraints on individual image depth or sky brightness; the primary driver is timeliness. 
+The lunar phase will influence the filter choice, inherently by what is available in the camera.
 
 \subsection{Co-added image depth and/or total number of visits}
 \begin{footnotesize}{\it  Constraints on the total co-added depth and/or total number of visits.
@@ -192,7 +199,7 @@ Each event trigger would require:
 \end{itemize}
 for a time requirement of 1580 seconds (26 minutes) per event. We estimate there will be about 6 events triggered in a year, for a total time requirement of 9480 seconds (2.6 hours) per year.
 
-Over all 10 years of LSST, responding to these ToOs would require about 26.3 hours, less than 1\% of the total time available. 
+Over all 10 years of LSST, responding to these ToOs would require about 26.3 hours, about 0.1\% of the total time (3650 nights x 0.83 uptime x 8 hours/night = 24236 hours) available. 
 
 \begin{table}[ht]
     \centering
@@ -231,8 +238,8 @@ Over all 10 years of LSST, responding to these ToOs would require about 26.3 hou
 \end{footnotesize}
 
 There aren't really very many trades to consider with these suggested responses to ToOs. The observations have to happen quickly in response to the event trigger, and
-at the location of the trigger. Changing the time sampling of the visits within the night is undesirable, because the sequence is intended to narrow down on the optical
-colors. 
+at the location of the trigger. Changing the time sampling of the visits within the night is undesirable, because the sequence is intended to constrain the optical
+colors of a transient source.
 
 \section{Performance Evaluation}
 \begin{footnotesize}
