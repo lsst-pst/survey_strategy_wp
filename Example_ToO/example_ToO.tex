@@ -43,8 +43,10 @@ This white paper addresses:
 
 \begin{footnotesize}
 {\it Describe the scientific justification for this white paper in the context
-of your field, as well as the importance to the general program of astronomy. 
-(Limit: 2 pages + 1 page for figures/references.)}
+of your field, as well as the importance to the general program of astronomy, 
+including the relevance over the next decade. 
+Describe other relevant data, and justify why LSST is the best facility for these observations.
+(Limit: 2 pages + 1 page for figures.)}
 \end{footnotesize}
 
 Again, example white paper here, not a real white paper. But for the purposes of this
@@ -161,14 +163,14 @@ of filters, please describe.}
 
 The visits within the night must be sequential; covering the tiling pattern once in $r$, then in $u$, then in $y$ and then $r$ again.
 
-\subsection{Filter choices}
+\subsection{Filter choice}
 \begin{footnotesize}
-{\it Please describe any special filter requests not included above.}
+{\it Please describe any filter constraints not included above.}
 \end{footnotesize}
 
 \subsection{Exposure constraints}
 \begin{footnotesize}
-{\it Describe any constraints on the minimum or maximum exposure time required (or alternatively, saturation limits).
+{\it Describe any constraints on the minimum or maximum exposure time per visit required (or alternatively, saturation limits).
 Please comment on any constraints on the number of exposures in a visit.}
 \end{footnotesize}
 
@@ -250,7 +252,8 @@ More complex metrics which more directly evaluate science output (e.g. number of
 identified as a result of a given survey) are also encouraged, preferably as a secondary metric.
 If possible, provide threshold values for these metrics at which point your proposed science would be unsuccessful 
 and where it reaches an ideal goal, or explain why this is not possible to quantify. While not necessary, 
-if you have already transformed this into a MAF metric, please submit the code in addition to the text description. (Limit: 2 pages).}
+if you have already transformed this into a MAF metric, please add a link to the code (or a PR to 
+\href{https://github.com/lsst-nonproject/sims_maf_contrib}{sims\_maf\_contrib}) in addition to the text description. (Limit: 2 pages).}
 \end{footnotesize}
 
 The survey will achieve these goals if it obtains the full sequence of observations of the ToO trigger within a night of the trigger event. If $g$ or $z$ band filters 
@@ -275,5 +278,8 @@ The total score for this event would be 5 + 2/3 * 2 = 6.3. This trigger is ``suc
 
 The data processing follows the same plan as standard LSST data processing -- difference imaging against standard LSST templates would identify potential optical counterparts, although a custom filter on the resulting alert stream would be required. This filter would require the potential counterparts to be present in
 both sets of $r$ band images (to reject moving objects), and place some constraint on relative $r$ and $y$ color. 
+
+\section{References}
+A real white paper will probably have real references. 
 
 \end{document}
